@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "myProject2",
-    "slug": "myProject2",
+    "slug": "myproject001",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -31,6 +31,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "05f6de3c-e74c-43fc-84e3-54124db85eba"
+      }
+    },
+    "owner": "solomonirailoa"
   }
 }
