@@ -51,8 +51,8 @@ Join our community of developers creating universal apps.
 
 
 ## End of guide
-The getting started guide ends here. Shown below is a preview of the works-in-progress FBC app. 
-<br/>
+The getting started guide ends here. The guide above is meant for developers who would like to work on this React-Native project using Expo. Following is a preview of the works-in-progress FBC app. 
+<br/><br/>
 
 <img src="https://wordpress-7y2g.onrender.com/wp-content/uploads/2024/06/FBC_logo_Name_Beveled_CMYK-vers2-1-1024x357.png">
 
