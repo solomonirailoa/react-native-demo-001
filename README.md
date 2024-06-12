@@ -52,10 +52,13 @@ Join our community of developers creating universal apps.
 
 ## End of guide
 The getting started guide ends here. Shown below is a preview of the works-in-progress FBC app. 
+<br/>
 
+<img src="https://wordpress-7y2g.onrender.com/wp-content/uploads/2024/06/FBC_logo_Name_Beveled_CMYK-vers2-1-1024x357.png">
 
 # FBC App demo 
 Let's take a look at this app for FBC made with the React-Native framework. <br/>
 <img src="https://i.ibb.co/tQjx0Dz/fbc-App-screenshot1.png">
-<img src="https://i.ibb.co/tQjx0Dz/fbc-App-screenshot2.png">
+<img src="https://i.ibb.co/XjBYwxM/fbc-App-sreenshot2.png">
 
+The app is currently at its infancy stage (Hello world templates and all). Updates will be made here frequently.
