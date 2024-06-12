@@ -48,3 +48,14 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+## End of guide
+The getting started guide ends here. Shown below is a preview of the works-in-progress FBC app. 
+
+
+# FBC App demo 
+Let's take a look at this app for FBC made with the React-Native framework. <br/>
+<img src="https://i.ibb.co/tQjx0Dz/fbc-App-screenshot1.png">
+<img src="https://i.ibb.co/tQjx0Dz/fbc-App-screenshot2.png">
+
