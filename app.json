@@ -41,6 +41,12 @@
         "projectId": "a96cf0da-5817-4e95-bbe8-0dba318fbd0c"
       }
     },
-    "owner": "fijian-broadcasting-corporation"
+    "owner": "fijian-broadcasting-corporation",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/a96cf0da-5817-4e95-bbe8-0dba318fbd0c"
+    }
   }
 }

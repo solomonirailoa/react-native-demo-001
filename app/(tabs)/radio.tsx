@@ -47,13 +47,14 @@ export default function RadioTab() {
         </ThemedText>
       </Collapsible>
       <Collapsible title="Mirchi FM">
-        It's hot
+        <ThemedText>
+          It's hot
+        </ThemedText>
       </Collapsible>
       <Collapsible title="2Day FM">
         <ThemedText>
           Today's hit music
         </ThemedText>
-          
       </Collapsible>
     </ParallaxScrollView>
   );
