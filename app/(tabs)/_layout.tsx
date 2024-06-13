@@ -24,11 +24,56 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="news"
         options={{
-          title: 'Explore',
+          title: 'News',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'star' : 'star'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="tv"
+        options={{
+          title: 'TV',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'tv' : 'tv'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="radio"
+        options={{
+          title: 'Radio',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'radio' : 'radio'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="advertise"
+        options={{
+          title: 'Advertise',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'add' : 'add'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="more"
+        options={{
+          title: 'More',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'menu' : 'menu'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'cog' : 'cog'} color={color} />
           ),
         }}
       />
