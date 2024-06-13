@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "myProject2",
-    "slug": "myproject001",
+    "slug": "react-native-demo-001",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.fijianbroadcastingcorporation.reactnativedemo001"
     },
     "web": {
       "bundler": "metro",
@@ -37,9 +38,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "05f6de3c-e74c-43fc-84e3-54124db85eba"
+        "projectId": "a96cf0da-5817-4e95-bbe8-0dba318fbd0c"
       }
     },
-    "owner": "solomonirailoa"
+    "owner": "fijian-broadcasting-corporation"
   }
 }
