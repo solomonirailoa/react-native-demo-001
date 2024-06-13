@@ -10,16 +10,12 @@ import { ThemedView } from '@/components/ThemedView';
 export default function TVTab() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <Image
-<<<<<<<< HEAD:app/(tabs)/tv.tsx
-          source={require('@/assets/images/photography/fbcTv.jpg')}
-          style={{width:'100%', height:'100%'}}
-========
-          source={require('@/assets/images/photography/s0adjas908djOIP.jpg')}
->>>>>>>> 641b56a8054ea1c98814e4c845a363f053e48282:app/(tabs)/explore.tsx
-        />
+    headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+    headerImage={
+      <Image
+        source={require('@/assets/images/photography/fbcTv.jpg')}
+        style={{width:'100%', height:'100%'}}
+      />
       }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">TV</ThemedText>
