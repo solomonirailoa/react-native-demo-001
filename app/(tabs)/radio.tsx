@@ -4,9 +4,11 @@ import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import GoldFMplayer from '@/components/radio/GoldFMplayer';
 
 export default function RadioTab() {
-  return (
+
+   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
       headerImage={
@@ -38,7 +40,8 @@ export default function RadioTab() {
           style={{ alignSelf: 'center', width:'60%', height:'44%'}} 
         />
         <ExternalLink href="https://www.goldfm.com.fj/">
-          <ThemedText type="link">Listen now to Gold FM</ThemedText>
+          {/* Notes for dev: https://peridot.streamguys1.com:7155/Gold  ... is the Stream for Gold FM */}
+          <GoldFMplayer></GoldFMplayer>
         </ExternalLink>
       </Collapsible>
       <Collapsible title="Bula FM">
