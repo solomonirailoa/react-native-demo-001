@@ -4,10 +4,11 @@ import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+
 import GoldFMplayer from '@/components/radio/GoldFMplayer';
+import BulaFMplayer from '@/components/radio/BulaFMplayer';
 
 export default function RadioTab() {
-
    return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
@@ -37,17 +38,19 @@ export default function RadioTab() {
         </ThemedText>
         <Image 
           source={require('@/assets/images/brands/goldFM.png')} 
-          style={{ alignSelf: 'center', width:'60%', height:'44%'}} 
+          style={{ alignSelf: 'center', width:'70%', height:'37%'}} 
         />
-        <ExternalLink href="https://www.goldfm.com.fj/">
-          {/* Notes for dev: https://peridot.streamguys1.com:7155/Gold  ... is the Stream for Gold FM */}
-          <GoldFMplayer></GoldFMplayer>
-        </ExternalLink>
+        <GoldFMplayer></GoldFMplayer>
       </Collapsible>
       <Collapsible title="Bula FM">
         <ThemedText>
           Naba dua e na sere
         </ThemedText>
+        <Image 
+          source={require('@/assets/images/brands/bulaFM.png')} 
+          style={{ alignSelf: 'center', width:'70%', height:'37%'}} 
+        />
+        <BulaFMplayer></BulaFMplayer>
       </Collapsible>
       <Collapsible title="Mirchi FM">
         <ThemedText>
