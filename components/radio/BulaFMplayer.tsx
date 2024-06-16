@@ -4,11 +4,9 @@ import { View, StyleSheet, Button } from 'react-native';
 
 export default function BulaFMplayer () {
     return (
-        <>
-            <View style={styles.container}>
-                <Button title="Play" />
-            </View>
-        </>
+        <View style={styles.container}>
+            <Button title="Play" />
+        </View>
     );
 }
 

@@ -1,12 +1,12 @@
 import { StyleSheet, Image, Platform } from 'react-native';
 import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 import GoldFMplayer from '@/components/radio/GoldFMplayer';
 import BulaFMplayer from '@/components/radio/BulaFMplayer';
+//import MusicPlayer from '@/components/MusicPlayer';
 
 export default function RadioTab() {
    return (
@@ -38,7 +38,7 @@ export default function RadioTab() {
         </ThemedText>
         <Image 
           source={require('@/assets/images/brands/goldFM.png')} 
-          style={{ alignSelf: 'center', width:'70%', height:'37%'}} 
+          style={{ alignSelf: 'center', width:'70%', height:'34%'}} 
         />
         <GoldFMplayer></GoldFMplayer>
       </Collapsible>
@@ -59,8 +59,10 @@ export default function RadioTab() {
       </Collapsible>
       <Collapsible title="2Day FM">
         <ThemedText>
-          Today's hit music
+          Today's hit music. 2DayFM rocks!
         </ThemedText>
+        <ThemedText> </ThemedText>
+        
       </Collapsible>
     </ParallaxScrollView>
   );

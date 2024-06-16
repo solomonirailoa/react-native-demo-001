@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { Button } from 'react-native-paper'; 
+
 import Sound from 'react-native-sound'; 
+Sound.setCategory("Playback");
+
 import Icon from 'react-native-vector-icons/FontAwesome'; 
 
 export default function MusicPlayer () {
@@ -64,7 +67,7 @@ export default function MusicPlayer () {
           />
         )}
       >
-        {playing ? 'Detener' : 'Reproducir'}
+        {playing ? 'Pause' : 'Play'}
       </Button>
     </View>
   );
@@ -77,8 +80,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 186,
+    height: 63,
     marginBottom: 20,
   },
   button: {
