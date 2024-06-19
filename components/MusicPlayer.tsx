@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { Button } from 'react-native-paper'; 
 
-import Sound from 'react-native-sound'; 
-Sound.setCategory("Playback");
+//import Sound from 'react-native-sound'; 
+//Sound.setCategory("Playback");
 
 import Icon from 'react-native-vector-icons/FontAwesome'; 
 

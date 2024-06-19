@@ -6,6 +6,7 @@ import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import ToggleSwitchDark from '@/components/ToggleSwitch';
 
 export default function SettingsTab() {
   return (
@@ -21,6 +22,7 @@ export default function SettingsTab() {
         <ThemedText type="title">Settings</ThemedText>
       </ThemedView>
       <ThemedText>The settings, adjustments, and configurations for the FBC app can be found here.</ThemedText>
+      <ToggleSwitchDark></ToggleSwitchDark>
       <Collapsible title="File-based routing">
         <ThemedText>
           This app has two screens:{' '}

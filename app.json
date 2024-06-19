@@ -4,13 +4,13 @@
     "slug": "react-native-demo-001",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon`FBC.png",
+    "icon": "./assets/images/iconFBC.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splashFBC.jpg",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#354D6E"
     },
     "ios": {
       "supportsTablet": true
@@ -18,7 +18,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/iconFBC.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#0B135E"
       },
       "package": "com.fijianbroadcastingcorporation.reactnativedemo001"
     },

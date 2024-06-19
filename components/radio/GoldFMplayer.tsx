@@ -11,7 +11,6 @@ export default function GoldFMplayer() {
       // Notes for dev: https://peridot.streamguys1.com:7155/Gold  ... is the Stream for Gold FM  
     );
     setSound(sound);
-
     console.log('Playing Sound');
     await sound.playAsync();
   }
