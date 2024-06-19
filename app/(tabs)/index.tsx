@@ -4,23 +4,6 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-import TrackPlayer, { RepeatMode } from 'react-native-track-player';
-
-// Creates the player
-const setup = async () => {
-  await TrackPlayer.setupPlayer({});
-
-  await TrackPlayer.add({
-    url: 'https://peridot.streamguys1.com:7155/Gold',
-    title: 'Track Title',
-    artist: 'Track Artist',
-    artwork: require('../../assets/images/brands/goldFM.png')
-  });
-
-  TrackPlayer.setRepeatMode(RepeatMode.Queue);
-  
-};
-
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
