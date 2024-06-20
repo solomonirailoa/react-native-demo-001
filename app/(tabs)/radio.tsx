@@ -9,6 +9,7 @@ import TrackPlayer, { useTrackPlayerEvents, Event, Capability, RepeatMode, usePl
 import { useState } from 'react';
 AppRegistry.registerComponent("FBC Radio", ()=>RadioTab);
 import { PlaybackService } from '@/services/PlaybackService';
+import { getPlaybackState } from 'react-native-track-player/lib/src/trackPlayer';
 TrackPlayer.registerPlaybackService(() => PlaybackService);
 
 const track1 = {
@@ -107,12 +108,14 @@ export default function RadioTab() {
 
   // do initial setup, set initial trackTitle..
   useTrackPlayerEvents([Event.PlaybackTrackChanged], async event => {
-    if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
+      
+      let ss = getPlaybackState();
+      console.log(ss);
       const track = await TrackPlayer.getTrack(event.nextTrack);
       setTrackArtwork(track?.artwork);
       const {title} = track || {};
       setTrackTitle(title);
-    }
+    
   });
 
   async function handlePlayPress() {
@@ -139,28 +142,30 @@ export default function RadioTab() {
       </ThemedView>
       <ThemedText>Fijians only love tuning in to our 6 radio stations.</ThemedText>
       <ThemedText>Current station playing: {trackTitle}</ThemedText>
-      <Image 
-        source={trackArtwork}
-        style={{width:133, height:62}}
-      />
-      <View style={{flexDirection: 'row',
-        flexWrap: 'wrap', alignItems: 'center'}}>
-          <Icon.Button
-            name="arrow-left"
-            size={28}
-            backgroundColor="transparent"
-            onPress={() => TrackPlayer.skipToPrevious()}/>
-          <Icon.Button
-            name={useIsPlaying().playing?"pause":"play"}
-            size={28}
-            backgroundColor="transparent"
-            onPress={handlePlayPress}/>
-          <Icon.Button
-            name="arrow-right"
-            size={28}
-            backgroundColor="transparent"
-            onPress={() => TrackPlayer.skipToNext()}/>
+      <View style={{alignItems: 'center', alignContent: 'center'}} >
+        <Image 
+          source={trackArtwork}
+          style={{width:248, height:108}}
+        />
+        <View style={{flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center'}} >
+            <Icon.Button
+              name="arrow-left"
+              size={28}
+              backgroundColor="transparent"
+              onPress={() => TrackPlayer.skipToPrevious()}/>
+            <Icon.Button
+              name={useIsPlaying().playing?"pause":"play"}
+              size={38}
+              backgroundColor="transparent"
+              onPress={handlePlayPress}/>
+            <Icon.Button
+              name="arrow-right"
+              size={28}
+              backgroundColor="transparent"
+              onPress={() => TrackPlayer.skipToNext()}/>
+        </View>
       </View>
+      
       </ParallaxScrollView>
   );
 }
