@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { View, useColorScheme, Switch } from 'react-native';
 import { ThemedText } from './ThemedText';
-import { useThemeColor } from '@/hooks/useThemeColor';
 
 export default function ToggleSwitchDark () {
   const colorScheme = useColorScheme();

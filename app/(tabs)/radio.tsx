@@ -1,14 +1,126 @@
-import { StyleSheet, Image, useColorScheme, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Image, Button, AppRegistry, View } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { WebView } from 'react-native-webview';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
 
+import TrackPlayer, { useTrackPlayerEvents, Event, Capability, RepeatMode, usePlaybackState, State, useIsPlaying } from 'react-native-track-player';
+import { useState } from 'react';
+AppRegistry.registerComponent("FBC Radio", ()=>RadioTab);
+import { PlaybackService } from '@/services/PlaybackService';
+TrackPlayer.registerPlaybackService(() => PlaybackService);
+
+const track1 = {
+  url: 'https://peridot.streamguys1.com:7155/RFOne', // Load media from the network
+  title: 'Radio Fiji 1',
+  artist: 'RF1',
+  album: 'Na domoi Viti',
+  genre: 'iTaukei classic music',
+  date: '2024-05-20T07:00:00+00:00', // RFC 3339
+  artwork: require('../../assets/images/brands/radioFiji1.jpg'),
+  duration: 1234 // Duration in seconds
+};
+const track2 = {
+  url: 'https://peridot.streamguys1.com:7155/RFTwo', // Load media from the network
+  title: 'Radio Fiji 2',
+  artist: 'RF2',
+  album: 'Desh ki Dhadkan',
+  genre: 'Hindi classic music',
+  date: '2024-05-20T07:00:00+00:00', // RFC 3339
+  artwork: require('../../assets/images/brands/radioFiji2.jpg'),
+  duration: 402 // Duration in seconds
+};
+const track3 = {
+  url: 'https://peridot.streamguys1.com:7155/Bula', // Load media from the network
+  title: 'Bula FM',
+  artist: 'BulaFM',
+  album: 'Naba dua e na sere',
+  genre: 'iTaukei latest music',
+  date: '2014-05-20T07:00:00+00:00', // RFC 3339
+  artwork: require('../../assets/images/brands/bulaFM.png'),
+  duration: 402 // Duration in seconds
+};
+const track4 = {
+  url: 'https://peridot.streamguys1.com:7155/Gold', // Load media from the network
+  title: 'Gold FM',
+  artist: 'GoldFM',
+  album: 'Only the classic hits',
+  genre: 'English classics and oldies',
+  date: '2014-05-20T07:00:00+00:00', // RFC 3339
+  artwork: require('../../assets/images/brands/goldFM.png'),
+  duration: 402 // Duration in seconds
+};
+const track5 = {
+  url: 'https://peridot.streamguys1.com:7155/Mirchi', // Load media from the network
+  title: 'Mirchi FM',
+  artist: 'MirchiFM',
+  album: 'It\'s hot',
+  genre: 'Hindi latest music',
+  date: '2024-05-20T07:00:00+00:00', // RFC 3339
+  artwork: require('../../assets/images/brands/mirchiFM.png'),
+  duration: 402 // Duration in seconds
+};
+const track6 = {
+  url: 'https://peridot.streamguys1.com:7155/2Day', // Load media from the network
+  title: '2Day FM',
+  artist: '2DayFM',
+  album: 'Today\'s hit music',
+  genre: 'English latest music',
+  date: '2024-05-20T07:00:00+00:00', // RFC 3339
+  artwork: require('../../assets/images/brands/2dayFM.png'),
+  duration: 402 // Duration in seconds
+};
+
+const setupRNTP = async () => {
+  console.log("Setting up RNTP");
+  await TrackPlayer.setupPlayer({});
+  console.log("Loading the audio stream");
+  await TrackPlayer.add([track1, track2, track3, track4, track5, track6]);
+  console.log("Done. Loaded the audio stream. Ready to play.");
+  TrackPlayer.setRepeatMode(RepeatMode.Queue);
+};  
+
+TrackPlayer.updateOptions({
+  // Media controls capabilities
+  capabilities: [
+      Capability.Play,
+      Capability.Pause,
+      Capability.SkipToNext,
+      Capability.SkipToPrevious,
+      Capability.Stop,
+  ],
+
+  // Capabilities that will show up when the notification is in the compact form on Android
+  compactCapabilities: [Capability.SkipToPrevious, Capability.Play, Capability.Pause, Capability.SkipToNext],
+});
+
+console.log("pre-setup");
+setupRNTP();
+console.log("post-setup");
 
 export default function RadioTab() {  
-  const colorScheme = useColorScheme();
-  const isDark = colorScheme === 'dark';
+  
+  const [trackTitle, setTrackTitle] = useState<string>();
+
+  // do initial setup, set initial trackTitle..
+  useTrackPlayerEvents([Event.PlaybackTrackChanged], async event => {
+    if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
+      const track = await TrackPlayer.getTrack(event.nextTrack);
+      const {title} = track || {};
+      setTrackTitle(title);
+    }
+  });
+
+  async function handlePlayPress() {
+    if(await TrackPlayer.getState() == State.Playing) {
+      TrackPlayer.pause();
+    }
+    else {
+      TrackPlayer.play()
+    }
+  }
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#000000' }}
@@ -23,11 +135,26 @@ export default function RadioTab() {
         <ThemedText type="title">Radio</ThemedText>
       </ThemedView>
       <ThemedText>Fijians only love tuning in to our 6 radio stations.</ThemedText>
-      <WebView
-        style={styles.webviewContainer}
-        source={{ uri: isDark? 'https://solomonirailoa.github.io/fbcRadio/dark':'https://solomonirailoa.github.io/fbcRadio/light' }}
-      ></WebView>
-    </ParallaxScrollView>
+      <ThemedText>Current station playing: {trackTitle}</ThemedText>
+      <View style={{flexDirection: 'row',
+        flexWrap: 'wrap', alignItems: 'center'}}>
+          <Icon.Button
+            name="arrow-left"
+            size={28}
+            backgroundColor="transparent"
+            onPress={() => TrackPlayer.skipToPrevious()}/>
+          <Icon.Button
+            name={useIsPlaying().playing?"pause":"play"}
+            size={28}
+            backgroundColor="transparent"
+            onPress={handlePlayPress}/>
+          <Icon.Button
+            name="arrow-right"
+            size={28}
+            backgroundColor="transparent"
+            onPress={() => TrackPlayer.skipToNext()}/>
+      </View>
+      </ParallaxScrollView>
   );
 }
 
