@@ -72,11 +72,13 @@ const track6 = {
   duration: 402 // Duration in seconds
 };
 
+const radioStationsStreamList = [track1, track2, track3, track4, track5, track6];
+
 const setupRNTP = async () => {
   console.log("Setting up RNTP");
   await TrackPlayer.setupPlayer({});
   console.log("Loading the audio stream");
-  await TrackPlayer.add([track1, track2, track3, track4, track5, track6]);
+  await TrackPlayer.add(radioStationsStreamList);
   console.log("Done. Loaded the audio stream. Ready to play.");
   TrackPlayer.setRepeatMode(RepeatMode.Queue);
 };  
@@ -88,7 +90,6 @@ TrackPlayer.updateOptions({
       Capability.Pause,
       Capability.SkipToNext,
       Capability.SkipToPrevious,
-      Capability.Stop,
   ],
 
   // Capabilities that will show up when the notification is in the compact form on Android
@@ -102,11 +103,13 @@ console.log("post-setup");
 export default function RadioTab() {  
   
   const [trackTitle, setTrackTitle] = useState<string>();
+  const [trackArtwork, setTrackArtwork] = useState<any>();
 
   // do initial setup, set initial trackTitle..
   useTrackPlayerEvents([Event.PlaybackTrackChanged], async event => {
     if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
       const track = await TrackPlayer.getTrack(event.nextTrack);
+      setTrackArtwork(track?.artwork);
       const {title} = track || {};
       setTrackTitle(title);
     }
@@ -117,7 +120,7 @@ export default function RadioTab() {
       TrackPlayer.pause();
     }
     else {
-      TrackPlayer.play()
+      TrackPlayer.play();
     }
   }
 
@@ -136,6 +139,10 @@ export default function RadioTab() {
       </ThemedView>
       <ThemedText>Fijians only love tuning in to our 6 radio stations.</ThemedText>
       <ThemedText>Current station playing: {trackTitle}</ThemedText>
+      <Image 
+        source={trackArtwork}
+        style={{width:133, height:62}}
+      />
       <View style={{flexDirection: 'row',
         flexWrap: 'wrap', alignItems: 'center'}}>
           <Icon.Button
