@@ -34,9 +34,14 @@ If you have issues running this project or installing modules, try running `npx 
 ![image](https://github.com/solomonirailoa/react-native-demo-001/assets/90390564/697a652b-e4b3-4c2f-b05d-30f99edc9a84)
 ![image](https://github.com/solomonirailoa/react-native-demo-001/assets/90390564/4d856b55-0fb6-43e5-b5ed-c8de19deab80)
 
-# Radio Player in FBC app
 
-[![Watch the video](https://github.com/solomonirailoa/react-native-demo-001/assets/90390564/8c5a5bd6-5880-4cfe-84c8-6654d74b3250)](https://raw.githubusercontent.com/solomonirailoa/sololearn/main/videos/Recording%202024-06-23%20210158.mp4)
+
+# Radio Player in FBC app
+Preview in video
+
+[![Click to watch video](https://img.youtube.com/vi/5gEG1z1o_WI/0.jpg)](https://www.youtube.com/watch?v=5gEG1z1o_WI)
+
+Click thumbnail above to watch video.
 
 
 
