@@ -35,9 +35,10 @@ If you have issues running this project or installing modules, try running `npx 
 ![image](https://github.com/solomonirailoa/react-native-demo-001/assets/90390564/4d856b55-0fb6-43e5-b5ed-c8de19deab80)
 
 # Radio Player in FBC app
-<video width="320" height="240" controls>
-  <source src="https://github.com/solomonirailoa/sololearn/raw/main/videos/Recording%202024-06-23%20210158.mp4" type="video/mp4">
+<video src="https://github.com/solomonirailoa/sololearn/raw/main/videos/Recording%202024-06-23%20210158.mp4" width="320" height="240" controls>
 </video>
+
+
 
 
 
