@@ -21,7 +21,7 @@ Once you've installed the custom Expo client above in your Android device, you w
 
 Metro builder should be starting up, and then you are introduced to the Expo's message in develpoment build mode alongside a QR code for you to scan with your phone. Make sure your PC and your Android device are both connected to the same Wi-Fi network. 
 
-The live preview of the app can be done by opening "FBC app" in your Android device, and then entering the URL manually, or you can scan for development builds. Alternatively, you can use your QR code Scanner in your phone to scan the QR code in your PC's terminal (when initially running `npx expo start`). This allows the "FBC app" to connect to the Expo development build running in your PC, sync changes, and gives you a live preview of the app.
+The live preview of the app can be done by opening "FBC app" in your Android device, and then entering the URL manually, or you can let the client search for development builds automatically in the same network. Alternatively, you can use your QR code Scanner in your phone to scan the QR code in your PC's terminal (when initially running `npx expo start`). This allows the "FBC app" to connect to the Expo development build running in your PC, sync changes, and gives you a live preview of the app.
 
 If you have issues running this project or installing modules, try running `npx react-native doctor` to fix errors. This command lists down a list of tools and programs needed properly to run react-native projects. Hope you have Java JDK and Android Studio installed. Optionally, you might need to run `npm upgrade` to update NodeJS modules which may be outdated. 
 
