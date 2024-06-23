@@ -23,7 +23,7 @@ Metro builder should be starting up, and then you are introduced to the Expo's m
 
 The live preview of the app can be done by opening "FBC app" in your Android device, and then entering the URL manually, or you can let the client search for development builds automatically in the same network. Alternatively, you can use your QR code Scanner in your phone to scan the QR code in your PC's terminal (when initially running `npx expo start`). This allows the "FBC app" to connect to the Expo development build running in your PC, sync changes, and gives you a live preview of the app.
 
-If you have issues running this project or installing modules, try running `npx react-native doctor` to fix errors. This command lists down a list of tools and programs needed properly to run react-native projects. Hope you have Java JDK and Android Studio installed. Optionally, you might need to run `npm upgrade` to update NodeJS modules which may be outdated. 
+If you have issues running this project or installing modules, try running `npx react-native doctor` to fix errors. This command, when entered, provides a list of tools and programs needed to properly run react-native projects. Hope you have Java JDK and Android Studio installed, and do know how to change Environment Variables in your Windows PC. Optionally, you might need to run `npm upgrade` to update any NodeJS modules which may be outdated. 
 
 # Screenshots of FBC app (current changes)
 ![image](https://github.com/solomonirailoa/react-native-demo-001/assets/90390564/f1d910ef-514a-4392-a999-28c8ecd5becb)
