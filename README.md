@@ -43,13 +43,3 @@ Preview in video
 
 Click thumbnail above to watch video.
 
-
-
-
-
-
-
-
-
-
-
